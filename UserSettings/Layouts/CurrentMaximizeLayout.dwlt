@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 299
     height: 677
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -503,9 +503,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.34183773, y: 1.9546392, z: -2.3194683}
+    m_Target: {x: 921.22784, y: 2268.152, z: -39.124046}
     speed: 2
-    m_Value: {x: 0.34183773, y: 1.9546392, z: -2.3194683}
+    m_Value: {x: 921.22784, y: 2268.152, z: -39.124046}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -552,13 +552,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.15829165, y: -0.065045066, z: 0.010449058, w: 0.9851867}
+    m_Target: {x: 0.22767834, y: -0.030596001, z: 0.007155893, w: 0.9732203}
     speed: 2
-    m_Value: {x: 0.15829252, y: -0.065045424, z: 0.010449116, w: 0.9851921}
+    m_Value: {x: -0.22767836, y: 0.030596003, z: -0.007155893, w: -0.9732203}
   m_Size:
-    m_Target: 0.80264354
+    m_Target: 139.15482
     speed: 2
-    m_Value: 0.80264354
+    m_Value: 139.15482
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -758,22 +758,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity Projects\EmreOzay-HumanGun
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 165e0000
-    m_LastClickedID: 24086
-    m_ExpandedIDs: 00000000fe5d0000105e0000226a0000246a0000266a000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: fe5d0000
+    m_LastClickedID: 24062
+    m_ExpandedIDs: 00000000fe5d0000226a0000246a0000266a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000c85a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 277
+    m_CachedPref: 254
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1

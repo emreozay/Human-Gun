@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerColliderHandler : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI moneyText;
     private int money = 0;
 
     private void OnTriggerEnter(Collider other)
@@ -27,7 +29,12 @@ public class PlayerColliderHandler : MonoBehaviour
 
         if (other.CompareTag("Money"))
         {
-            print("Money: $" + ++money);
+            if(moneyText != null)
+            {
+                money++;
+                moneyText.text = "$" + money;
+            }
+
             Destroy(other.gameObject);
         }
 
