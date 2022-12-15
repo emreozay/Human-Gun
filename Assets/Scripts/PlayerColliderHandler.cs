@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerColliderHandler : MonoBehaviour
 {
+    int money = 0;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Lens"))
@@ -21,6 +22,12 @@ public class PlayerColliderHandler : MonoBehaviour
             {
                 mesh.material.color = Color.gray;
             }
+        }
+
+        if (other.CompareTag("Money"))
+        {
+            print("Money: $" + ++money);
+            Destroy(other.gameObject);
         }
     }
 }

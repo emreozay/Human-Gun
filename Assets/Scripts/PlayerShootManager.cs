@@ -24,8 +24,9 @@ public class PlayerShootManager : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit raycast, 3f)){
             if (canShoot)
             {
-                if(raycast.collider.CompareTag("StoneWithMoney") || raycast.collider.CompareTag("Stone"))
-                StartCoroutine(WaitForShoot(0.15f));
+                Shootable shootable = raycast.transform.GetComponent<Shootable>();
+                if (shootable != null)
+                    StartCoroutine(WaitForShoot(0.15f));
             }
         }
     }

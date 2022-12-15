@@ -6,32 +6,11 @@ public class BulletTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Stone"))
+        Shootable shootable = other.GetComponent<Shootable>();
+        if (shootable != null)
         {
-            DestroyParent(other);
+            shootable.GetShot();
+            gameObject.SetActive(false);
         }
-
-        if (other.CompareTag("StoneWithMoney"))
-        {
-            Transform moneyChild = other.transform.GetChild(0);
-
-            HandleMoney(moneyChild);
-            DestroyParent(other);
-        }
-    }
-
-    private void HandleMoney(Transform moneyChild)
-    {
-        moneyChild.SetParent(null);
-
-        Vector3 newPosition = moneyChild.position;
-        newPosition.y = -0.6f;
-        moneyChild.position = newPosition;
-    }
-
-    private void DestroyParent(Collider other)
-    {
-        gameObject.SetActive(false);
-        Destroy(other.gameObject);
     }
 }
