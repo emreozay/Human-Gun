@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lens
   - Money
+  - Obstacle
   layers:
   - Default
   - TransparentFX

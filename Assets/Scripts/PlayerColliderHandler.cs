@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerColliderHandler : MonoBehaviour
 {
-    int money = 0;
+    private int money = 0;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Lens"))
@@ -28,6 +29,11 @@ public class PlayerColliderHandler : MonoBehaviour
         {
             print("Money: $" + ++money);
             Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("Obstacle"))
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * 2f, ForceMode.Impulse);
         }
     }
 }
