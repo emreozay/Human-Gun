@@ -29,14 +29,17 @@ public class LevelGenerator : MonoBehaviour
         else
             currentLevel = PlayerPrefs.GetInt("Level", 1);
     }
-    
+
     void Start()
     {
+        //Move it later!!!
+        Application.targetFrameRate = Screen.currentResolution.refreshRate; ;
+
         NewLevel += CreateAndDestroyLevel;
 
         GetLevels();
     }
-    
+
     private void InstantiateObjects(ObjectWithPosition[] objectsWithPositions)
     {
         for (int i = 0; i < objectsWithPositions.Length; i++)
@@ -76,7 +79,7 @@ public class LevelGenerator : MonoBehaviour
 
         levels = Resources.LoadAll<Level>("Levels").ToList();
         levels = levels.OrderBy(w => w.levelIndex).ToList();
-        
+
         CreateAndDestroyLevel();
         isFirstLevel = false;
     }

@@ -8,7 +8,8 @@ public class ShootableStoneWithMoney : Shootable
     {
         base.GetShot();
 
-        if(num == 0){
+        if (num == 0)
+        {
             Transform moneyChild = transform.GetChild(0);
             moneyChild.SetParent(null);
 

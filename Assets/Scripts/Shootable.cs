@@ -17,8 +17,8 @@ public class Shootable : MonoBehaviour
             num--;
 
             textChild.text = num.ToString();
-            
-            if(num <= 0)
+
+            if (num <= 0)
                 Destroy(gameObject);
         }
     }

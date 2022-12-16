@@ -20,7 +20,7 @@ public class ShootableBarrel : Shootable
         var colliders = Physics.OverlapSphere(transform.position, 2f);
         foreach (var item in colliders)
         {
-            if(item.GetComponent<Shootable>() != null)
+            if (item.GetComponent<Shootable>() != null)
                 Destroy(item.gameObject);
         }
     }
