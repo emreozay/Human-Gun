@@ -67,7 +67,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 00000000000000000000000012000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 900a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 7cb8fcfff0bbfcffe6d7fcffc4ddfcff1ae1fcff62e8fcff78ecfcff4cf3fcff68f5fcff00f8fcffa8fefcffaa01fdff2808fdff540bfdff42a2ffff46a2ffff4aa2ffffaedaffff74dbffff7cdbffff2cddffffdee1ffff6ce3ffff32fbffff
+      m_ExpandedIDs: 32fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -758,22 +758,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity Projects\EmreOzay-HumanGun
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fe5d0000
-    m_LastClickedID: 24062
-    m_ExpandedIDs: 00000000fe5d0000226a0000246a0000266a000000ca9a3b
+    m_SelectedIDs: 245f0000
+    m_LastClickedID: 24356
+    m_ExpandedIDs: 00000000065f0000085f00000a5f00000c5f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -801,7 +801,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fe5d0000226a0000246a0000266a000000ca9a3b
+    m_ExpandedIDs: 00000000065f0000085f00000a5f00000c5f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -826,8 +826,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 900a0000
+    m_LastClickedInstanceID: 2704
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000c85a0000
     m_RenameOverlay:
