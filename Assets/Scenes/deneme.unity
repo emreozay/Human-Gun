@@ -2020,17 +2020,23 @@ MonoBehaviour:
   currentLevel: 3
   changeTheLevel: 1
   objectsWithPrefab:
+  - objectType: 0
+    objectPrefab: {fileID: 3224726139761311967, guid: a6be701c0dad90149ae32dedb404a26c, type: 3}
   - objectType: 1
     objectPrefab: {fileID: 2267992372862410654, guid: 1c564a947470d9c4193111f2b0ac33b5, type: 3}
   - objectType: 2
+    objectPrefab: {fileID: 6922286572404645399, guid: 08f7f7984897bf94aa46ee67b57e0447, type: 3}
+  - objectType: 3
     objectPrefab: {fileID: 3525570002448337356, guid: daafaefd31aca09478f47a432fe29d9f, type: 3}
   - objectType: 4
-    objectPrefab: {fileID: 2917561265003037987, guid: 6ad1f7ee42ae5bf41a12f608441ef20a, type: 3}
+    objectPrefab: {fileID: 882343910408802732, guid: 87212226933be6e4eb5d430d5d992648, type: 3}
   - objectType: 5
-    objectPrefab: {fileID: 550335548339507130, guid: 9df6ae892a7f56e4bb8a118f0237f07e, type: 3}
+    objectPrefab: {fileID: 2917561265003037987, guid: 6ad1f7ee42ae5bf41a12f608441ef20a, type: 3}
   - objectType: 6
-    objectPrefab: {fileID: 8722491912678273497, guid: cb6a8cb478b738e46a8c452858ef9f9e, type: 3}
+    objectPrefab: {fileID: 550335548339507130, guid: 9df6ae892a7f56e4bb8a118f0237f07e, type: 3}
   - objectType: 7
+    objectPrefab: {fileID: 8722491912678273497, guid: cb6a8cb478b738e46a8c452858ef9f9e, type: 3}
+  - objectType: 8
     objectPrefab: {fileID: 5828341755443128449, guid: bb25d053c01dae74ba0625fbc94de592, type: 3}
 --- !u!4 &1403590941
 Transform:

@@ -19,7 +19,8 @@ public class LevelGenerator : MonoBehaviour
 
     public static Action NewLevel;
 
-    public ObjectWithPrefab[] objectsWithPrefab;
+    [SerializeField]
+    private ObjectWithPrefab[] objectsWithPrefab;
 
     private void Awake()
     {
@@ -44,7 +45,6 @@ public class LevelGenerator : MonoBehaviour
             {
                 if (objectsWithPositions[i].objectType == objectsWithPrefab[j].objectType)
                 {
-                    print(objectsWithPositions[i].objectType + "  " + objectsWithPrefab[j].objectType);
                     GameObject temp = objectsWithPrefab[j].objectPrefab;
                     Instantiate(temp, objectsWithPositions[i].position, Quaternion.identity, objectParent);
 
@@ -76,7 +76,7 @@ public class LevelGenerator : MonoBehaviour
 
         levels = Resources.LoadAll<Level>("Levels").ToList();
         levels = levels.OrderBy(w => w.levelIndex).ToList();
-        print(levels.Count);
+        
         CreateAndDestroyLevel();
         isFirstLevel = false;
     }
@@ -128,6 +128,7 @@ public enum ObjectType
 {
     LENS,
     STONE,
+    BARREL,
     STONE_MONEY,
     STONE_HUMAN,
     OBSTACLE_SPIN,
