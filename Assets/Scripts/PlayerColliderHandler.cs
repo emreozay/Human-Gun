@@ -12,9 +12,9 @@ public class PlayerColliderHandler : MonoBehaviour
     private int health = 2;
     private bool isFinished;
 
-    private void Start()
+    private void Awake()
     {
-        isFinished = false;
+        LevelGenerator.NewLevel += ResetVariables;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,29 +50,38 @@ public class PlayerColliderHandler : MonoBehaviour
         {
             health--;
             print("HEALTH: " + health);
+
+            if (isFinished)
+            {
+                PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level", 1) + 1);
+
+                Time.timeScale = 0;
+                LevelGenerator.LevelCompleted();
+
+                return;
+            }
+
             if (health > 0)
             {
-                if (isFinished)
-                    print("YOU WIN!");
+                if (other.GetComponent<Shootable>() != null)
+                    Destroy(other.gameObject);
                 else
-                {
-                    if (other.GetComponent<Shootable>() != null)
-                        Destroy(other.gameObject);
-                    else
-                        GetComponent<Rigidbody>().AddForce(Vector3.up * 2f, ForceMode.Impulse);
-                }
+                    GetComponent<Rigidbody>().AddForce(Vector3.up * 2f, ForceMode.Impulse);
+
             }
             else
             {
-                if (isFinished)
-                    print("YOU WIN!");
-                else
-                    print("YOU LOSE!");
+                Time.timeScale = 0;
 
-                GetComponent<Rigidbody>().velocity = Vector3.zero;
-
+                LevelGenerator.LevelFailed();
             }
         }
+    }
+
+    private void ResetVariables()
+    {
+        isFinished = false;
+        health = 2;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -80,6 +89,12 @@ public class PlayerColliderHandler : MonoBehaviour
         if (collision.collider.CompareTag("Finish"))
         {
             isFinished = true;
+            print("FINISHED!!!");
         }
+    }
+
+    private void OnDestroy()
+    {
+        LevelGenerator.NewLevel -= ResetVariables;
     }
 }

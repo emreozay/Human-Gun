@@ -18,8 +18,11 @@ public class FinishText : MonoBehaviour
 
     private void WriteTexts()
     {
-        stoneHealth = 10 * multiplier;
+        stoneHealth = 10 * multiplier * PlayerPrefs.GetInt("Level", 1);
         stoneTexts = GetComponentsInChildren<TextMeshPro>();
+
+        if (stoneTexts == null)
+            return;
 
         for (int i = 0; i < stoneTexts.Length; i++)
         {

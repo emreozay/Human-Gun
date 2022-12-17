@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField] private Transform objectParent;
+    //[SerializeField] private Transform objectParent;
 
     [Header("Level Changes")]
     [SerializeField][Min(1)] private int currentLevel = 1;
@@ -18,6 +18,16 @@ public class LevelGenerator : MonoBehaviour
     private bool isFirstLevel = true;
 
     public static Action NewLevel;
+    public static Action LevelCompleted;
+    public static Action LevelFailed;
+
+    [SerializeField]
+    private GameObject finalRoadPrefab;
+    private GameObject finalRoad;
+    [SerializeField]
+    private GameObject player;
+    private Vector3 playerFirstPosition;
+    private Transform objectParent;
 
     [SerializeField]
     private ObjectWithPrefab[] objectsWithPrefab;
@@ -33,15 +43,18 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         //Move it later!!!
-        Application.targetFrameRate = Screen.currentResolution.refreshRate; ;
-
+        Application.targetFrameRate = Screen.currentResolution.refreshRate;
         NewLevel += CreateAndDestroyLevel;
 
         GetLevels();
+
+        playerFirstPosition = player.transform.position;
     }
 
     private void InstantiateObjects(ObjectWithPosition[] objectsWithPositions)
     {
+        objectParent = new GameObject("ObjectParent").transform;
+
         for (int i = 0; i < objectsWithPositions.Length; i++)
         {
             for (int j = 0; j < objectsWithPrefab.Length; j++)
@@ -54,28 +67,12 @@ public class LevelGenerator : MonoBehaviour
                     break;
                 }
             }
-
-
-
-            /*string type = objectsWithPositions[i].type.ToString()[0] + objectsWithPositions[i].type.ToString().Substring(1).ToLowerInvariant();
-            string shape = objectsWithPositions[i].shape.ToString()[0] + objectsWithPositions[i].shape.ToString().Substring(1).ToLowerInvariant();
-
-            string objectName = type + shape;
-
-            GameObject temp = collectableObjectPrefabs.Where(obj => obj.name == objectName).SingleOrDefault();
-            Instantiate(temp, basePosition + objectsWithPositions[i].position, Quaternion.identity, collectibleObjectParent);*/
         }
-    }
-
-    private void DestroyObjects()
-    {
-        Destroy(objectParent.gameObject);
     }
 
     private void GetLevels()
     {
         levels = new List<Level>();
-        //baseLevelObjects = new List<GameObject>();
 
         levels = Resources.LoadAll<Level>("Levels").ToList();
         levels = levels.OrderBy(w => w.levelIndex).ToList();
@@ -86,39 +83,27 @@ public class LevelGenerator : MonoBehaviour
 
     private void CreateAndDestroyLevel()
     {
+        ResetLevel();
+
         currentLevel = PlayerPrefs.GetInt("Level", 1);
 
         if (currentLevel <= levels.Count)
-        {
             level = levels[currentLevel - 1];
 
-            InstantiateObjects(level.objects);
-            /*if (isFirstLevel)
-                level = levels[currentLevel - 1];
-            else
-                level = levels[currentLevel];*/
-        }
-        else
-        {
-            //ContinueWithRandomLevel();
-        }
+        if (finalRoad != null)
+            Destroy(finalRoad);
 
-        //InstantiateObjects(level.objects);
+        finalRoad = Instantiate(finalRoadPrefab);
+
+        InstantiateObjects(level.objects);
     }
 
-    private void ContinueWithRandomLevel()
+    private void ResetLevel()
     {
-        var random = new System.Random();
-        int index = random.Next(levels.Count);
+        player.transform.position = playerFirstPosition;
 
-        level = levels[index];
-
-        if (isFirstLevel)
-            level.levelIndex = currentLevel;
-        else
-            level.levelIndex = currentLevel + 1;
-
-        levels.Add(level);
+        if (objectParent != null)
+            Destroy(objectParent.gameObject);
     }
 
     private void OnDestroy()

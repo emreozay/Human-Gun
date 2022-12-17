@@ -406,7 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2333167602813202355}
   m_Layer: 0
-  m_Name: PRE_Final
+  m_Name: Final
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4992,7 +4992,7 @@ GameObject:
   - component: {fileID: 4132405983562006565}
   m_Layer: 0
   m_Name: FinishPlane
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
