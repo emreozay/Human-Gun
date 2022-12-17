@@ -1,20 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody rb;
+    private Rigidbody playerRigidbody;
 
     [SerializeField] private float xSpeed = 0.4f;
     private float moveForwardSpeed = 4.5f;
     private float lastMousePoint;
     private bool isMouseDown = false;
 
+    private void Awake()
+    {
+        playerRigidbody = GetComponent<Rigidbody>();
+    }
+
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        Application.targetFrameRate = Screen.currentResolution.refreshRate;
+
+        playerRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     void Update()
@@ -49,13 +53,13 @@ public class PlayerMovement : MonoBehaviour
             float xPos = transform.position.x + difference * Time.deltaTime * xSpeed;
             xPos = Mathf.Clamp(xPos, -1.6f, 1.6f);
 
-            rb.MovePosition(new Vector3(xPos, transform.position.y, transform.position.z + moveForwardSpeed * Time.fixedDeltaTime));
+            playerRigidbody.MovePosition(new Vector3(xPos, transform.position.y, transform.position.z + moveForwardSpeed * Time.fixedDeltaTime));
 
             lastMousePoint = Input.mousePosition.x;
         }
         else
         {
-            rb.MovePosition(new Vector3(transform.position.x, transform.position.y, transform.position.z + moveForwardSpeed * Time.fixedDeltaTime));
+            playerRigidbody.MovePosition(new Vector3(transform.position.x, transform.position.y, transform.position.z + moveForwardSpeed * Time.fixedDeltaTime));
         }
     }
 }

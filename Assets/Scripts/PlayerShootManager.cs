@@ -21,11 +21,13 @@ public class PlayerShootManager : MonoBehaviour
     private void Update()
     {
         Debug.DrawRay(transform.position, Vector3.forward * 3f, Color.cyan);
+
         if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit raycast, 3f))
         {
             if (canShoot)
             {
                 Shootable shootable = raycast.transform.GetComponent<Shootable>();
+
                 if (shootable != null)
                     StartCoroutine(WaitForShoot(0.15f));
             }

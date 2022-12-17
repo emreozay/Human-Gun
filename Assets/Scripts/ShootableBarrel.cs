@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootableBarrel : Shootable
@@ -18,6 +16,7 @@ public class ShootableBarrel : Shootable
             return;
 
         var colliders = Physics.OverlapSphere(transform.position, 2f);
+
         foreach (var item in colliders)
         {
             if (item.GetComponent<Shootable>() != null)

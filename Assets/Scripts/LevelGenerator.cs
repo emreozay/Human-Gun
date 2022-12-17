@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    //[SerializeField] private Transform objectParent;
-
     [Header("Level Changes")]
     [SerializeField][Min(1)] private int currentLevel = 1;
     [Tooltip("If you want to change the level, please mark this as true.")]
@@ -15,8 +13,6 @@ public class LevelGenerator : MonoBehaviour
     private Level level;
     private List<Level> levels;
 
-    private bool isFirstLevel = true;
-
     public static Action NewLevel;
     public static Action LevelCompleted;
     public static Action LevelFailed;
@@ -24,9 +20,11 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private GameObject finalRoadPrefab;
     private GameObject finalRoad;
+
     [SerializeField]
     private GameObject player;
     private Vector3 playerFirstPosition;
+
     private Transform objectParent;
 
     [SerializeField]
@@ -38,14 +36,12 @@ public class LevelGenerator : MonoBehaviour
             PlayerPrefs.SetInt("Level", currentLevel);
         else
             currentLevel = PlayerPrefs.GetInt("Level", 1);
+
+        NewLevel += CreateAndDestroyLevel;
     }
 
     void Start()
     {
-        //Move it later!!!
-        Application.targetFrameRate = Screen.currentResolution.refreshRate;
-        NewLevel += CreateAndDestroyLevel;
-
         GetLevels();
 
         playerFirstPosition = player.transform.position;
@@ -78,7 +74,6 @@ public class LevelGenerator : MonoBehaviour
         levels = levels.OrderBy(w => w.levelIndex).ToList();
 
         CreateAndDestroyLevel();
-        isFirstLevel = false;
     }
 
     private void CreateAndDestroyLevel()

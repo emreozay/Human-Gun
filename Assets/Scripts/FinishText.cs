@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +9,11 @@ public class FinishText : MonoBehaviour
     private TextMeshPro[] stoneTexts;
     private int stoneHealth;
 
+    private void Awake()
+    {
+        stoneTexts = GetComponentsInChildren<TextMeshPro>();
+    }
+
     private void Start()
     {
         WriteTexts();
@@ -19,7 +22,6 @@ public class FinishText : MonoBehaviour
     private void WriteTexts()
     {
         stoneHealth = 10 * multiplier * PlayerPrefs.GetInt("Level", 1);
-        stoneTexts = GetComponentsInChildren<TextMeshPro>();
 
         if (stoneTexts == null)
             return;
