@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0217ffff
-      m_LastClickedID: -59646
-      m_ExpandedIDs: 0817ffff5028ffffd22afffff833ffffa240ffff32fbffffba5a0000d4040100
+      m_SelectedIDs: 0e6c0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 32fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -487,9 +487,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: -231, y: -199}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 3
       id: Scene View/Particles
       index: 10
       layout: 4
@@ -503,9 +503,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.23265976, y: 2.8814526, z: -4.1834745}
+    m_Target: {x: 0.0062335827, y: -0.07070308, z: 2.3059883}
     speed: 2
-    m_Value: {x: -0.23265976, y: 2.8814526, z: -4.1834745}
+    m_Value: {x: 0.0062335827, y: -0.07070308, z: 2.3059883}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -552,13 +552,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.21157514, y: 0.032753117, z: -0.007100869, w: -0.9767734}
+    m_Target: {x: -0.15122303, y: 0.007929004, z: -0.001214024, w: -0.9884619}
     speed: 2
-    m_Value: {x: -0.21157514, y: 0.032753117, z: -0.007100869, w: -0.97677344}
+    m_Value: {x: -0.15122303, y: 0.007929004, z: -0.0012140239, w: -0.98846185}
   m_Size:
-    m_Target: 0.5673208
+    m_Target: 3.0092666
     speed: 2
-    m_Value: 0.5673208
+    m_Value: 3.0092666
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -606,7 +606,7 @@ MonoBehaviour:
     x: 299
     y: 73
     width: 932
-    height: 656
+    height: 620
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -649,9 +649,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 7497d2b0cda5ba441bb58d4362edf9ac, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: db38f38a14389054e9dfeff52f801315, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 750938097536436079, guid: 7497d2b0cda5ba441bb58d4362edf9ac, type: 2}
+  - m_Target: {fileID: 750938097536436079, guid: db38f38a14389054e9dfeff52f801315, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -758,22 +758,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Resources/Levels
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Resources/Levels
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity Projects\EmreOzay-HumanGun
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a6c0000
-    m_LastClickedID: 27658
-    m_ExpandedIDs: 000000000a6c00000c6c00000e6c0000106c000000ca9a3b
+    m_SelectedIDs: ce6c0000
+    m_LastClickedID: 27854
+    m_ExpandedIDs: 000000005e6c0000606c0000626c0000646c0000746c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -789,7 +789,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 11}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -801,7 +801,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a6c00000c6c00000e6c0000106c000000ca9a3b
+    m_ExpandedIDs: 000000005e6c0000606c0000626c0000646c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -826,8 +826,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 0217ffff
-    m_LastClickedInstanceID: -59646
+    m_SelectedInstanceIDs: 0e6c0000
+    m_LastClickedInstanceID: 27662
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000c85a000000000000
     m_RenameOverlay:
@@ -856,7 +856,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 115
+  m_DirectoriesAreaWidth: 114
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52

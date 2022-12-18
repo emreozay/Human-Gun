@@ -286,3 +286,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8290613bb1332d49bce0783c9a732cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoneParticle: {fileID: 3492932080966948572, guid: 29ab5fe667a31c641ae146a8d557ea30, type: 3}
+  explosionParticle: {fileID: 4914716930404006884, guid: aed12c224fbc8704d8eaa07a52e88f44, type: 3}

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class ShootableBarrel : Shootable
 {
+    [SerializeField]
+    private GameObject explosionParticle;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -14,6 +17,8 @@ public class ShootableBarrel : Shootable
 
         if (num > 0)
             return;
+
+        Instantiate(explosionParticle, transform.position, Quaternion.identity);
 
         var colliders = Physics.OverlapSphere(transform.position, 2f);
 

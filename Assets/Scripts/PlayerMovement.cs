@@ -4,7 +4,9 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
 
-    [SerializeField] private float xSpeed = 0.4f;
+    [SerializeField]
+    private float xSpeed = 0.4f;
+    [SerializeField]
     private float moveForwardSpeed = 4.5f;
     private float lastMousePoint;
     private bool isMouseDown = false;

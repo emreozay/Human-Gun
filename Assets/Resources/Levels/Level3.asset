@@ -19,12 +19,16 @@ MonoBehaviour:
   - objectType: 7
     position: {x: 0.85, y: 0, z: 7.66}
   - objectType: 6
-    position: {x: 0.89, y: 0.46, z: 45}
+    position: {x: 0.89, y: 0, z: 45}
   - objectType: 5
     position: {x: 1, y: 0, z: 22.41}
   - objectType: 4
-    position: {x: -1, y: 0, z: 15}
+    position: {x: -1, y: 0.16, z: 15}
   - objectType: 0
     position: {x: 0, y: 0, z: 12}
   - objectType: 2
     position: {x: 0, y: 0.16, z: 30}
+  - objectType: 1
+    position: {x: 1, y: 0.16, z: 30}
+  - objectType: 1
+    position: {x: -1, y: 0.16, z: 30}

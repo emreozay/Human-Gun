@@ -9,6 +9,8 @@ public class PlayerShootManager : MonoBehaviour
     [SerializeField]
     private float bulletForce;
 
+    private float bulletWaitTime = 0.25f;
+    private float bulletRange = 5f;
     private bool canShoot = true;
 
     private Queue<GameObject> bulletList = new Queue<GameObject>();
@@ -20,16 +22,16 @@ public class PlayerShootManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(transform.position, Vector3.forward * 3f, Color.cyan);
+        Debug.DrawRay(transform.position, Vector3.forward * bulletRange, Color.cyan);
 
-        if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit raycast, 3f))
+        if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit raycast, bulletRange))
         {
             if (canShoot)
             {
                 Shootable shootable = raycast.transform.GetComponent<Shootable>();
 
                 if (shootable != null)
-                    StartCoroutine(WaitForShoot(0.15f));
+                    StartCoroutine(WaitForShoot(bulletWaitTime));
             }
         }
     }
