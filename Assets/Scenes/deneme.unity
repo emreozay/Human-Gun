@@ -1690,7 +1690,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 3
     m_CustomResolution: -1
     m_Strength: 0.697
@@ -2099,7 +2099,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -2543,6 +2543,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3022595195255147521, guid: eba4c40c0e3ef84489c9ffe9f08fc2bb, type: 3}
   m_PrefabInstance: {fileID: 1269941495}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1316355651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1316355652}
+  m_Layer: 0
+  m_Name: Bullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1316355652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316355651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1364698037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3535,7 +3566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0.4
-  moveForwardSpeed: 3.5
+  moveForwardSpeed: 4
 --- !u!54 &2026252606
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3592,6 +3623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 437582845250212936, guid: 5dbfb38903f2d5b469253687699aa83a, type: 3}
   bulletForce: 25
+  bulletParent: {fileID: 1316355652}
 --- !u!4 &2043778673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4522949042615395593, guid: b313281a5eded4041a630da24ae00a01, type: 3}

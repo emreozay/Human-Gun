@@ -8,6 +8,8 @@ public class PlayerShootManager : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private float bulletForce;
+    [SerializeField]
+    private Transform bulletParent;
 
     private float bulletWaitTime = 0.25f;
     private float bulletRange = 5f;
@@ -40,7 +42,7 @@ public class PlayerShootManager : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            var bullet = Instantiate(bulletPrefab);
+            var bullet = Instantiate(bulletPrefab, bulletParent);
             bullet.SetActive(false);
 
             bulletList.Enqueue(bullet);
