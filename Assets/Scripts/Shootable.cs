@@ -3,11 +3,20 @@ using UnityEngine;
 
 public class Shootable : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject stoneParticle;
+    private TextMeshPro textChild;
     protected int num;
+
+    private void Awake()
+    {
+        textChild = GetComponentInChildren<TextMeshPro>();
+    }
 
     public virtual void GetShot()
     {
-        var textChild = GetComponentInChildren<TextMeshPro>();
+        Vector3 particlePosition = transform.position - (Vector3.forward / 2f);
+        Instantiate(stoneParticle, particlePosition, Quaternion.identity);
 
         if (textChild != null)
         {
