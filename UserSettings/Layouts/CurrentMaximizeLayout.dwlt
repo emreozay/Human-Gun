@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: e0cafbff6cd0fbff02ddfbff34ddfbff46ddfbffd2e2fbff123efcffac44fcff3256fcff32fbffff
+      m_SelectedIDs: cc8ef5ff
+      m_LastClickedID: -684340
+      m_ExpandedIDs: ea8ff5ff86acf5ff40f5f5ffd4f8f5ff0463f6fffc66f6ff1c99f6ffd0c7f6ffd813f7fff013f7ffa615f7ffd815f7ff241af7ffe41bf9ff8020f9ff3845f9ff3c45f9ff7649f9ff286df9ff0471f9ff1c81f9ffca84f9ffaeabf9ff883cfaff2c5efaffa26efaff346ffaffa86ffaff5e80faffd280faffde93faff52a4faffe0cafbff6cd0fbff02ddfbff34ddfbff46ddfbffd2e2fbff123efcffac44fcff3256fcff32fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -503,9 +503,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.8195457, y: 4.1776633, z: 112.24041}
+    m_Target: {x: -0.15892942, y: 0.36183137, z: 34.972893}
     speed: 2
-    m_Value: {x: -2.8195457, y: 4.1776633, z: 112.24041}
+    m_Value: {x: -0.15892942, y: 0.36183137, z: 34.972893}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -552,13 +552,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.2070336, y: 0.2326058, z: -0.05074676, w: 0.94892555}
+    m_Target: {x: 0.32645556, y: 0.21905446, z: -0.07806083, w: 0.916147}
     speed: 2
-    m_Value: {x: 0.20703326, y: 0.23260541, z: -0.050746676, w: 0.94892395}
+    m_Value: {x: 0.3278332, y: 0.21893966, z: -0.07839022, w: 0.9156669}
   m_Size:
-    m_Target: 0.38320273
+    m_Target: 1.8452872
     speed: 2
-    m_Value: 0.38320273
+    m_Value: 1.8452872
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -709,14 +709,14 @@ MonoBehaviour:
     y: 641
     width: 1531
     height: 306
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
   - {fileID: 13}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -758,22 +758,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Resources/Levels
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Resources/Levels
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity Projects\EmreOzay-HumanGun
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b86c0000
-    m_LastClickedID: 27832
-    m_ExpandedIDs: 00000000a06c0000a26c0000a46c0000a66c000000ca9a3b
+    m_SelectedIDs: ba6c0000
+    m_LastClickedID: 27834
+    m_ExpandedIDs: 00000000a06c0000a26c0000a46c0000a66c0000a86c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -826,8 +826,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: cc8ef5ff
+    m_LastClickedInstanceID: -684340
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000c85a000000000000
     m_RenameOverlay:
@@ -853,7 +853,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 50}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 114
@@ -947,7 +947,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 1280
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

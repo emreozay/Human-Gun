@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96cee712e5d35fc4e98ef74a92a501bf, type: 3}
-  m_Name: Level1
+  m_Name: Level5
   m_EditorClassIdentifier: 
-  levelIndex: 1
+  levelIndex: 5
   objects:
-  - objectType: 1
+  - objectType: 4
     position: {x: 0, y: 0.15, z: 15}
   - objectType: 0
     position: {x: 0, y: 0.05, z: 20}
   - objectType: 2
     position: {x: 0, y: -0.25, z: 30}
-  - objectType: 4
+  - objectType: 5
     position: {x: -1, y: 0.15, z: 35}
-  - objectType: 4
-    position: {x: 1, y: 0.15, z: 35}
+  - objectType: 1
+    position: {x: 0, y: 0.15, z: 35}
   - objectType: 9
     position: {x: 0, y: -0.12, z: 40}
   - objectType: 9
-    position: {x: -0.6, y: -0.12, z: 45}
+    position: {x: 0.5, y: -0.12, z: 45}
   - objectType: 2
     position: {x: 0.6, y: -0.25, z: 50}
   - objectType: 2
@@ -43,24 +43,22 @@ MonoBehaviour:
   - objectType: 1
     position: {x: 0, y: 0.15, z: 50}
   - objectType: 7
-    position: {x: -1.3, y: 0, z: 60}
-  - objectType: 7
-    position: {x: 1, y: 0, z: 60}
-  - objectType: 4
-    position: {x: 0, y: 0.15, z: 60}
+    position: {x: -0.5, y: -0.12, z: 60}
+  - objectType: 5
+    position: {x: 1, y: 0.15, z: 60}
   - objectType: 0
     position: {x: 0, y: 0.05, z: 58}
   - objectType: 9
     position: {x: 0.5, y: -0.12, z: 70}
-  - objectType: 5
+  - objectType: 4
     position: {x: -1, y: 0.15, z: 75}
-  - objectType: 5
+  - objectType: 3
     position: {x: 0, y: 0.15, z: 75}
-  - objectType: 5
+  - objectType: 1
     position: {x: 1, y: 0.15, z: 75}
-  - objectType: 1
+  - objectType: 5
     position: {x: 1, y: 0.15, z: 80}
-  - objectType: 1
+  - objectType: 4
     position: {x: 0, y: 0.15, z: 80}
   - objectType: 2
     position: {x: -0.9, y: -0.25, z: 85}
@@ -68,20 +66,16 @@ MonoBehaviour:
     position: {x: -1.5, y: -0.25, z: 85}
   - objectType: 2
     position: {x: -1.2, y: -0.25, z: 85}
-  - objectType: 9
-    position: {x: 0.5, y: -0.12, z: 85}
-  - objectType: 1
+  - objectType: 4
     position: {x: -1, y: 0.15, z: 90}
   - objectType: 1
     position: {x: 0, y: 0.15, z: 90}
-  - objectType: 4
+  - objectType: 5
     position: {x: 1, y: 0.15, z: 90}
   - objectType: 9
     position: {x: 0, y: -0.12, z: 95}
   - objectType: 7
-    position: {x: -1.3, y: 0, z: 100}
-  - objectType: 7
-    position: {x: 1, y: 0, z: 100}
+    position: {x: 0, y: 0, z: 100}
   - objectType: 2
     position: {x: 1, y: -0.25, z: 105}
   - objectType: 2
@@ -90,9 +84,9 @@ MonoBehaviour:
     position: {x: -1, y: -0.25, z: 105}
   - objectType: 2
     position: {x: -0.6, y: -0.25, z: 105}
-  - objectType: 1
+  - objectType: 3
     position: {x: 0, y: 0.15, z: 110}
-  - objectType: 1
+  - objectType: 4
     position: {x: -1, y: 0.15, z: 110}
-  - objectType: 1
+  - objectType: 5
     position: {x: 1, y: 0.15, z: 110}
