@@ -16,7 +16,8 @@ public class Shootable : MonoBehaviour
     public virtual void GetShot()
     {
         Vector3 particlePosition = transform.position - (Vector3.forward / 2f);
-        Instantiate(stoneParticle, particlePosition, Quaternion.identity);
+        GameObject particle = Instantiate(stoneParticle, particlePosition, Quaternion.identity);
+        Destroy(particle, 1);
 
         if (textChild != null)
         {

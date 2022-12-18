@@ -18,7 +18,8 @@ public class ShootableBarrel : Shootable
         if (num > 0)
             return;
 
-        Instantiate(explosionParticle, transform.position, Quaternion.identity);
+        GameObject particle = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+        Destroy(particle, 1);
 
         var colliders = Physics.OverlapSphere(transform.position, 2f);
 
