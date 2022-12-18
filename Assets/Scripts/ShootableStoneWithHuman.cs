@@ -6,7 +6,7 @@ public class ShootableStoneWithHuman : Shootable
     {
         base.GetShot();
 
-        if (num == 0)
+        if (shootableHealth == 0)
         {
             Transform humanChild = transform.GetChild(0);
             humanChild.SetParent(null);

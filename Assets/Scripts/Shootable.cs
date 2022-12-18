@@ -6,11 +6,24 @@ public class Shootable : MonoBehaviour
     [SerializeField]
     private GameObject stoneParticle;
     private TextMeshPro textChild;
-    protected int num;
+    protected int shootableHealth;
 
     private void Awake()
     {
         textChild = GetComponentInChildren<TextMeshPro>();
+    }
+
+    private void Start()
+    {
+        SetRandomHealth();
+    }
+
+    private void SetRandomHealth()
+    {
+        int currentLevel = PlayerPrefs.GetInt("Level", 1);
+        int randomHealth = Random.Range(2, currentLevel * 4);
+
+        SetHealth(randomHealth);
     }
 
     public virtual void GetShot()
@@ -18,15 +31,31 @@ public class Shootable : MonoBehaviour
         Vector3 particlePosition = transform.position - (Vector3.forward / 2f);
         Instantiate(stoneParticle, particlePosition, Quaternion.identity);
 
+        SetHealth(shootableHealth - 1);
+
+        if (shootableHealth <= 0)
+            Destroy(gameObject);
+
+        // You can use this part for lens!
+        /*
         if (textChild != null)
         {
-            num = Mathf.Abs(int.Parse(textChild.text));
-            num--;
+            shootableHealth = Mathf.Abs(int.Parse(textChild.text));
+            shootableHealth--;
 
-            textChild.text = num.ToString();
+            textChild.text = shootableHealth.ToString();
 
-            if (num <= 0)
+            if (shootableHealth <= 0)
                 Destroy(gameObject);
         }
+        */
+    }
+
+    public void SetHealth(int health)
+    {
+        shootableHealth = health;
+
+        if (textChild != null)
+            textChild.text = shootableHealth.ToString();
     }
 }

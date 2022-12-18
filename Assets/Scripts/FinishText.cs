@@ -1,4 +1,4 @@
-using TMPro;
+using System.Collections;
 using UnityEngine;
 
 public class FinishText : MonoBehaviour
@@ -6,29 +6,35 @@ public class FinishText : MonoBehaviour
     [SerializeField]
     private int multiplier;
 
-    private TextMeshPro[] stoneTexts;
+    private Shootable[] shootables;
     private int stoneHealth;
 
     private void Awake()
     {
-        stoneTexts = GetComponentsInChildren<TextMeshPro>();
+        shootables = GetComponentsInChildren<Shootable>();
     }
 
     private void Start()
     {
-        WriteTexts();
+        StartCoroutine(WaitForSetHealths());
     }
 
-    private void WriteTexts()
+    private void SetStoneHealths()
     {
         stoneHealth = 10 * multiplier * PlayerPrefs.GetInt("Level", 1);
 
-        if (stoneTexts == null)
+        if (shootables == null)
             return;
 
-        for (int i = 0; i < stoneTexts.Length; i++)
+        for (int i = 0; i < shootables.Length; i++)
         {
-            stoneTexts[i].text = stoneHealth.ToString();
+            shootables[i].SetHealth(stoneHealth);
         }
+    }
+
+    private IEnumerator WaitForSetHealths()
+    {
+        yield return new WaitForSeconds(1);
+        SetStoneHealths();
     }
 }

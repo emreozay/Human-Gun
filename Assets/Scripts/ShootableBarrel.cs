@@ -15,7 +15,7 @@ public class ShootableBarrel : Shootable
     {
         base.GetShot();
 
-        if (num > 0)
+        if (shootableHealth > 0)
             return;
 
         Instantiate(explosionParticle, transform.position, Quaternion.identity);
