@@ -111,6 +111,7 @@ public enum ObjectType
 {
     LENS,
     STONE,
+    HUMAN,
     BARREL,
     STONE_MONEY,
     STONE_HUMAN,
