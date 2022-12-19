@@ -9,6 +9,9 @@ public class PlayerColliderHandler : MonoBehaviour
     [SerializeField]
     private Animator playerAnimator;
 
+    [SerializeField]
+    private Material[] stickmanMaterials;
+
     private int money = 0;
     private int health = 2;
     private bool isFinished;
@@ -86,6 +89,9 @@ public class PlayerColliderHandler : MonoBehaviour
             playerAnimator.SetTrigger("Pose_01");
 
             other.enabled = false;
+
+            Material humanMaterial = stickmanMaterials[Random.Range(0, stickmanMaterials.Length)];
+            other.GetComponentInChildren<SkinnedMeshRenderer>().material = humanMaterial;
 
             if (humanAnimator != null)
             {
