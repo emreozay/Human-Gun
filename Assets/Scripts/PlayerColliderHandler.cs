@@ -13,6 +13,8 @@ public class PlayerColliderHandler : MonoBehaviour
     private int health = 2;
     private bool isFinished;
 
+    int animIndex = 1;
+
     private void Awake()
     {
         LevelGenerator.NewLevel += ResetVariables;
@@ -83,12 +85,14 @@ public class PlayerColliderHandler : MonoBehaviour
             Animator humanAnimator = other.GetComponent<Animator>();
             playerAnimator.SetTrigger("Pose_01");
 
-            if(humanAnimator != null)
+            other.enabled = false;
+
+            if (humanAnimator != null)
             {
+                animIndex++;
                 other.transform.SetParent(transform);
                 other.transform.localPosition = new Vector3(0f, other.transform.localPosition.y, 0f);
-
-                humanAnimator.SetTrigger("Pose_02");
+                humanAnimator.SetTrigger("Pose_0" + animIndex.ToString());
             }
         }
     }
