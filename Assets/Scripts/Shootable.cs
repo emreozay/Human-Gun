@@ -35,20 +35,6 @@ public class Shootable : MonoBehaviour
 
         if (shootableHealth <= 0)
             Destroy(gameObject);
-
-        // You can use this part for lens!
-        /*
-        if (textChild != null)
-        {
-            shootableHealth = Mathf.Abs(int.Parse(textChild.text));
-            shootableHealth--;
-
-            textChild.text = shootableHealth.ToString();
-
-            if (shootableHealth <= 0)
-                Destroy(gameObject);
-        }
-        */
     }
 
     public void SetHealth(int health)

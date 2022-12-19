@@ -11,6 +11,10 @@ public class ShootableStoneWithHuman : Shootable
             Transform humanChild = transform.GetChild(0);
             humanChild.SetParent(null);
 
+            Animator humanAnimator = humanChild.GetComponent<Animator>();
+            if(humanAnimator != null)
+                humanAnimator.enabled = true;
+            
             Vector3 newPosition = humanChild.position;
             newPosition.y = -0.25f;
             humanChild.position = newPosition;
