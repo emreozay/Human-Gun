@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -12,11 +14,16 @@ public class PlayerColliderHandler : MonoBehaviour
     [SerializeField]
     private Material[] stickmanMaterials;
 
+    [SerializeField]
+    private GameObject stickman;
+
+    private Stack<GameObject> stickmanStack = new Stack<GameObject>();
+
     private int money = 0;
     private int health = 2;
     private bool isFinished;
 
-    int animIndex = 1;
+    private int animIndex = 1;
 
     private void Awake()
     {
@@ -32,13 +39,24 @@ public class PlayerColliderHandler : MonoBehaviour
 
             if (textChild != null)
             {
-                int num = int.Parse(textChild.text);
+                float sign = Mathf.Sign(int.Parse(textChild.text));
+                int stickmanNumber = Mathf.Abs(int.Parse(textChild.text));
+
+                if(sign > 0f)
+                {
+                    StartCoroutine(WaitForNewStickman(stickmanNumber));
+                }
+                else if(sign < 0f)
+                {
+                    for (int i = 0; i < stickmanNumber; i++)
+                    {
+                        DestroyStickman();
+                    }
+                }
             }
 
             if (mesh != null)
-            {
                 mesh.material.color = Color.gray;
-            }
         }
 
         if (other.CompareTag("Money"))
@@ -85,25 +103,56 @@ public class PlayerColliderHandler : MonoBehaviour
 
         if (other.CompareTag("Human"))
         {
-            Animator humanAnimator = other.GetComponent<Animator>();
+            AddNewStickman(other);
+        }
+    }
+
+    private void AddNewStickman(Collider humanCollider)
+    {
+        Animator humanAnimator = humanCollider.GetComponent<Animator>();
+
+        if (playerAnimator != null)
             playerAnimator.SetTrigger("Pose_01");
 
-            other.enabled = false;
+        humanCollider.enabled = false;
 
-            Material humanMaterial = stickmanMaterials[Random.Range(0, stickmanMaterials.Length)];
-            other.GetComponentInChildren<SkinnedMeshRenderer>().material = humanMaterial;
+        Material humanMaterial = stickmanMaterials[Random.Range(0, stickmanMaterials.Length)];
+        humanCollider.GetComponentInChildren<SkinnedMeshRenderer>().material = humanMaterial;
 
-            if (humanAnimator != null)
-            {
-                animIndex++;
+        if (humanAnimator != null)
+        {
+            animIndex++;
 
-                if (animIndex > 6)
-                    return;
+            if (animIndex > 6)
+                return;
 
-                other.transform.SetParent(transform);
-                other.transform.localPosition = new Vector3(0f, other.transform.localPosition.y, 0f);
-                humanAnimator.SetTrigger("Pose_0" + animIndex.ToString());
-            }
+            humanCollider.transform.SetParent(transform);
+            humanCollider.transform.localPosition = new Vector3(0f, humanCollider.transform.localPosition.y, 0f);
+            humanAnimator.SetTrigger("Pose_0" + animIndex.ToString());
+
+            stickmanStack.Push(humanCollider.gameObject);
+        }
+    }
+
+    private void DestroyStickman()
+    {
+        animIndex--;
+        GameObject deletedStickman = stickmanStack.Pop();
+
+        Destroy(deletedStickman);
+    }
+
+    private IEnumerator WaitForNewStickman(int stickmanNumber)
+    {
+        for (int i = 0; i < stickmanNumber; i++)
+        {
+            yield return new WaitForSeconds(0.25f);
+
+            GameObject newStickman = Instantiate(stickman);
+            Collider stickmanCollider = newStickman.GetComponent<Collider>();
+
+            if (stickmanCollider != null)
+                AddNewStickman(stickmanCollider);
         }
     }
 
