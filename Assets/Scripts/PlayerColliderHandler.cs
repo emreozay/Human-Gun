@@ -96,6 +96,10 @@ public class PlayerColliderHandler : MonoBehaviour
             if (humanAnimator != null)
             {
                 animIndex++;
+
+                if (animIndex > 6)
+                    return;
+
                 other.transform.SetParent(transform);
                 other.transform.localPosition = new Vector3(0f, other.transform.localPosition.y, 0f);
                 humanAnimator.SetTrigger("Pose_0" + animIndex.ToString());
