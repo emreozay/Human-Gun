@@ -88,13 +88,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8852366158080910428, guid: fccae6f37161c92499f67d5faa41f514, type: 3}
+      propertyPath: m_text
+      value: +1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fccae6f37161c92499f67d5faa41f514, type: 3}
+--- !u!23 &995966853323589358 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2827641652972491397, guid: fccae6f37161c92499f67d5faa41f514, type: 3}
+  m_PrefabInstance: {fileID: 3093884474420401259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5779881491420327991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8852366158080910428, guid: fccae6f37161c92499f67d5faa41f514, type: 3}
+  m_PrefabInstance: {fileID: 3093884474420401259}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8304545219109531071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6471677513815669204, guid: fccae6f37161c92499f67d5faa41f514, type: 3}
   m_PrefabInstance: {fileID: 3093884474420401259}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8679697948273112837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5952585277580895086, guid: fccae6f37161c92499f67d5faa41f514, type: 3}
+  m_PrefabInstance: {fileID: 3093884474420401259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6734931857018868958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679697948273112837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f15db9f4d4bb7843bb93e805c3720c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redLensMaterial: {fileID: 2100000, guid: fc9b55bcae4b739418c768c2f1150130, type: 2}
+  blueLensMaterial: {fileID: 2100000, guid: 6f7abbba97051bb4896f5b0e6b7785fb, type: 2}
+  lensMesh: {fileID: 995966853323589358}
+  lensText: {fileID: 5779881491420327991}
 --- !u!1001 &3483916348350275878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,8 +193,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 278353390dee0b942975b4075d08c69f, type: 3}
+--- !u!23 &995966853338910984 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4434701919554662446, guid: 278353390dee0b942975b4075d08c69f, type: 3}
+  m_PrefabInstance: {fileID: 3483916348350275878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5779881490336147533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6948800110907050347, guid: 278353390dee0b942975b4075d08c69f, type: 3}
+  m_PrefabInstance: {fileID: 3483916348350275878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8304545219124132441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4856833772208249727, guid: 278353390dee0b942975b4075d08c69f, type: 3}
   m_PrefabInstance: {fileID: 3483916348350275878}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8679697948293964003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5200848577477706181, guid: 278353390dee0b942975b4075d08c69f, type: 3}
+  m_PrefabInstance: {fileID: 3483916348350275878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6238376414596889123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679697948293964003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f15db9f4d4bb7843bb93e805c3720c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redLensMaterial: {fileID: 2100000, guid: fc9b55bcae4b739418c768c2f1150130, type: 2}
+  blueLensMaterial: {fileID: 2100000, guid: 6f7abbba97051bb4896f5b0e6b7785fb, type: 2}
+  lensMesh: {fileID: 995966853338910984}
+  lensText: {fileID: 5779881490336147533}
