@@ -662,7 +662,7 @@ Animator:
   m_GameObject: {fileID: 5737715491772845444}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: db38f38a14389054e9dfeff52f801315, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8e8d591307e153b448cd14d4b6d7a0c2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -683,8 +683,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21, y: 0.5, z: 0.2}
-  m_Center: {x: 0, y: 0.24, z: 0}
+  m_Size: {x: 0.21, y: 0.5, z: 0.8}
+  m_Center: {x: 0, y: 0.24000001, z: -0.3}
 --- !u!1 &6130301212889885097
 GameObject:
   m_ObjectHideFlags: 0

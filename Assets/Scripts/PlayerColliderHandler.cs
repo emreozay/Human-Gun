@@ -6,6 +6,9 @@ public class PlayerColliderHandler : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI moneyText;
 
+    [SerializeField]
+    private Animator playerAnimator;
+
     private int money = 0;
     private int health = 2;
     private bool isFinished;
@@ -72,6 +75,20 @@ public class PlayerColliderHandler : MonoBehaviour
                 Time.timeScale = 0;
 
                 LevelGenerator.LevelFailed();
+            }
+        }
+
+        if (other.CompareTag("Human"))
+        {
+            Animator humanAnimator = other.GetComponent<Animator>();
+            playerAnimator.SetTrigger("Pose_01");
+
+            if(humanAnimator != null)
+            {
+                other.transform.SetParent(transform);
+                other.transform.localPosition = new Vector3(0f, other.transform.localPosition.y, 0f);
+
+                humanAnimator.SetTrigger("Pose_02");
             }
         }
     }
