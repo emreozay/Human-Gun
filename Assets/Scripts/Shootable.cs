@@ -42,7 +42,8 @@ public class Shootable : MonoBehaviour
         Vector3 particlePosition = transform.position - (Vector3.forward / 2f);
         Instantiate(stoneParticle, particlePosition, Quaternion.identity);
 
-        SetHealth(shootableHealth - 1);
+        int bulletDamage = PlayerColliderHandler.GetBulletDamage();
+        SetHealth(shootableHealth - bulletDamage);
 
         if (shootableHealth <= 0)
             Destroy(gameObject);

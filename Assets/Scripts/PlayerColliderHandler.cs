@@ -27,12 +27,19 @@ public class PlayerColliderHandler : MonoBehaviour
     private int money = 0;
     private int health = 1;
     private int animIndex = 1;
+    private static int bulletDamage = 1;
 
     private bool isFinished;
 
     private void Awake()
     {
         LevelGenerator.NewLevel += ResetVariables;
+    }
+
+    private void Start()
+    {
+        money = PlayerPrefs.GetInt("Money", 0);
+        UpdateMoney();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -130,6 +137,7 @@ public class PlayerColliderHandler : MonoBehaviour
 
             if (animIndex > 6)
             {
+                animIndex = 6;
                 Destroy(humanCollider.gameObject);
                 UpdateMoney();
 
@@ -137,6 +145,7 @@ public class PlayerColliderHandler : MonoBehaviour
             }
 
             health++;
+            bulletDamage++;
 
             if (animIndex > 2)
                 humanCollider.transform.SetParent(recoilParent);
@@ -156,6 +165,7 @@ public class PlayerColliderHandler : MonoBehaviour
     {
         health--;
         animIndex--;
+        bulletDamage--;
 
         if (health < 2)
         {
@@ -187,7 +197,9 @@ public class PlayerColliderHandler : MonoBehaviour
     private IEnumerator DisableAnimator(Animator anim)
     {
         yield return new WaitForSeconds(0.2f);
-        anim.enabled = false;
+
+        if (anim != null)
+            anim.enabled = false;
     }
 
     private void ResetVariables()
@@ -195,8 +207,14 @@ public class PlayerColliderHandler : MonoBehaviour
         isFinished = false;
         health = 1;
         animIndex = 1;
+        bulletDamage = 1;
 
         playerAnimator.SetTrigger("isRunning");
+    }
+
+    public static int GetBulletDamage()
+    {
+        return bulletDamage;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -221,6 +239,7 @@ public class PlayerColliderHandler : MonoBehaviour
 
     private void OnDestroy()
     {
+        PlayerPrefs.SetInt("Money", money);
         LevelGenerator.NewLevel -= ResetVariables;
     }
 }

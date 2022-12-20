@@ -21,7 +21,7 @@ public class FinishText : MonoBehaviour
 
     private void SetStoneHealths()
     {
-        stoneHealth = 10 * multiplier * PlayerPrefs.GetInt("Level", 1);
+        stoneHealth = 5 * multiplier * PlayerPrefs.GetInt("Level", 1);
 
         if (shootables == null)
             return;

@@ -6,7 +6,7 @@ public class ShootableStoneWithMoney : Shootable
     {
         base.GetShot();
 
-        if (shootableHealth == 0)
+        if (shootableHealth <= 0)
         {
             Transform moneyChild = transform.GetChild(0);
             moneyChild.SetParent(null);

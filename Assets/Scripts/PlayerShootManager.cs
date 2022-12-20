@@ -16,7 +16,7 @@ public class PlayerShootManager : MonoBehaviour
     private float bulletForce;
 
     private float bulletWaitTime = 0.25f;
-    private float bulletRange = 5f;
+    private float bulletRange = 6f;
     private bool canShoot = true;
 
     private PlayerColliderHandler playerColliderHandler;
