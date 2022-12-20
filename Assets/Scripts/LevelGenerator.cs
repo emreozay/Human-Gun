@@ -97,6 +97,12 @@ public class LevelGenerator : MonoBehaviour
     {
         player.transform.position = playerFirstPosition;
 
+        foreach (Transform child in player.transform.GetComponentsInChildren<Transform>())
+        {
+            if (child.gameObject.CompareTag("Human"))
+                Destroy(child.gameObject);
+        }
+
         if (objectParent != null)
             Destroy(objectParent.gameObject);
     }
