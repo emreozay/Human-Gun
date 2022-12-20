@@ -128,7 +128,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2026252604}
+    m_TransformParent: {fileID: 2036427609}
     m_Modifications:
     - target: {fileID: 385499022932663684, guid: b313281a5eded4041a630da24ae00a01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3564,7 +3564,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2043778673}
+  - {fileID: 2036427609}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3624,12 +3624,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 591827433}
+  stickman: {fileID: 5737715491772845444, guid: 3b5d6e71053e56f499bd5cbe6b0f1476, type: 3}
+  recoilParent: {fileID: 2036427609}
   playerAnimator: {fileID: 2043778674}
   stickmanMaterials:
   - {fileID: 2100000, guid: b494c07fb008f0f4c9d7ce6e08c1e333, type: 2}
   - {fileID: 2100000, guid: 16bf1d40dfcfa9e44af7078e808e17f0, type: 2}
   - {fileID: 2100000, guid: a01ea08ad25db75419d374f51c66c60e, type: 2}
-  stickman: {fileID: 5737715491772845444, guid: 3b5d6e71053e56f499bd5cbe6b0f1476, type: 3}
 --- !u!114 &2026252609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3643,8 +3644,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 437582845250212936, guid: 5dbfb38903f2d5b469253687699aa83a, type: 3}
-  bulletForce: 25
   bulletParent: {fileID: 1316355652}
+  recoilParent: {fileID: 2036427609}
+  recoilAnimator: {fileID: 2036427610}
+  bulletForce: 25
+--- !u!1 &2036427608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036427609}
+  - component: {fileID: 2036427610}
+  m_Layer: 0
+  m_Name: RecoilParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036427609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036427608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2043778673}
+  m_Father: {fileID: 2026252604}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2036427610
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036427608}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47a20d5cb5ee8ad4f8e415454ac73376, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &2043778673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4522949042615395593, guid: b313281a5eded4041a630da24ae00a01, type: 3}

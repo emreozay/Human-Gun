@@ -7,15 +7,25 @@ public class PlayerShootManager : MonoBehaviour
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
-    private float bulletForce;
-    [SerializeField]
     private Transform bulletParent;
+
+    [SerializeField]
+    private Animator recoilAnimator;
+
+    [SerializeField]
+    private float bulletForce;
 
     private float bulletWaitTime = 0.25f;
     private float bulletRange = 5f;
     private bool canShoot = true;
 
+    private PlayerColliderHandler playerColliderHandler;
     private Queue<GameObject> bulletList = new Queue<GameObject>();
+
+    private void Awake()
+    {
+        playerColliderHandler = GetComponent<PlayerColliderHandler>();
+    }
 
     void Start()
     {
@@ -28,7 +38,12 @@ public class PlayerShootManager : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit raycast, bulletRange))
         {
-            if (canShoot)
+            int health = 0;
+
+            if (playerColliderHandler != null)
+                health = playerColliderHandler.GetHealth();
+
+            if (canShoot && health > 1)
             {
                 Shootable shootable = raycast.transform.GetComponent<Shootable>();
 
@@ -64,6 +79,8 @@ public class PlayerShootManager : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.AddForce(Vector3.forward * bulletForce, ForceMode.Impulse);
 
+        Recoil();
+
         bulletList.Enqueue(nextBullet);
     }
 
@@ -74,5 +91,11 @@ public class PlayerShootManager : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
         canShoot = true;
+    }
+
+    private void Recoil()
+    {
+        if (recoilAnimator != null)
+            recoilAnimator.SetTrigger("isRecoil");
     }
 }

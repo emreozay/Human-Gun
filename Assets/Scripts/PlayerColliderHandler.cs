@@ -9,21 +9,23 @@ public class PlayerColliderHandler : MonoBehaviour
     private TextMeshProUGUI moneyText;
 
     [SerializeField]
+    private GameObject stickman;
+    [SerializeField]
+    private Transform recoilParent;
+
+    [SerializeField]
     private Animator playerAnimator;
 
     [SerializeField]
     private Material[] stickmanMaterials;
 
-    [SerializeField]
-    private GameObject stickman;
-
     private Stack<GameObject> stickmanStack = new Stack<GameObject>();
 
     private int money = 0;
-    private int health = 2;
-    private bool isFinished;
-
+    private int health = 1;
     private int animIndex = 1;
+
+    private bool isFinished;
 
     private void Awake()
     {
@@ -42,11 +44,11 @@ public class PlayerColliderHandler : MonoBehaviour
                 float sign = Mathf.Sign(int.Parse(textChild.text));
                 int stickmanNumber = Mathf.Abs(int.Parse(textChild.text));
 
-                if(sign > 0f)
+                if (sign > 0f)
                 {
                     StartCoroutine(WaitForNewStickman(stickmanNumber));
                 }
-                else if(sign < 0f)
+                else if (sign < 0f)
                 {
                     for (int i = 0; i < stickmanNumber; i++)
                     {
@@ -72,8 +74,7 @@ public class PlayerColliderHandler : MonoBehaviour
 
         if (other.CompareTag("Obstacle"))
         {
-            health--;
-            print("HEALTH: " + health);
+            DestroyStickman();
 
             if (isFinished)
             {
@@ -91,7 +92,6 @@ public class PlayerColliderHandler : MonoBehaviour
                     Destroy(other.gameObject);
                 else
                     GetComponent<Rigidbody>().AddForce(Vector3.up * 2f, ForceMode.Impulse);
-
             }
             else
             {
@@ -126,27 +126,45 @@ public class PlayerColliderHandler : MonoBehaviour
             if (animIndex > 6)
                 return;
 
-            humanCollider.transform.SetParent(transform);
+            health++;
+
+            if (animIndex > 2)
+                humanCollider.transform.SetParent(recoilParent);
+            else
+                humanCollider.transform.SetParent(transform);
+
             humanCollider.transform.localPosition = new Vector3(0f, humanCollider.transform.localPosition.y, 0f);
             humanAnimator.SetTrigger("Pose_0" + animIndex.ToString());
 
             stickmanStack.Push(humanCollider.gameObject);
+
+            StartCoroutine(DisableAnimator(humanAnimator));
         }
     }
 
     private void DestroyStickman()
     {
+        health--;
         animIndex--;
-        GameObject deletedStickman = stickmanStack.Pop();
 
-        Destroy(deletedStickman);
+        if (health < 2)
+        {
+            Time.timeScale = 0;
+            LevelGenerator.LevelFailed();
+        }
+
+        if (stickmanStack.Count > 0)
+        {
+            GameObject deletedStickman = stickmanStack.Pop();
+            Destroy(deletedStickman);
+        }
     }
 
     private IEnumerator WaitForNewStickman(int stickmanNumber)
     {
         for (int i = 0; i < stickmanNumber; i++)
         {
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.2f);
 
             GameObject newStickman = Instantiate(stickman);
             Collider stickmanCollider = newStickman.GetComponent<Collider>();
@@ -156,10 +174,19 @@ public class PlayerColliderHandler : MonoBehaviour
         }
     }
 
+    private IEnumerator DisableAnimator(Animator anim)
+    {
+        yield return new WaitForSeconds(0.2f);
+        anim.enabled = false;
+    }
+
     private void ResetVariables()
     {
         isFinished = false;
-        health = 2;
+        health = 1;
+        animIndex = 1;
+
+        playerAnimator.SetTrigger("isRunning");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -169,6 +196,11 @@ public class PlayerColliderHandler : MonoBehaviour
             isFinished = true;
             print("FINISHED!!!");
         }
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
     private void OnDestroy()
