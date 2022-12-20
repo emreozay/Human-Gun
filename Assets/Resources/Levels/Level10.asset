@@ -79,7 +79,7 @@ MonoBehaviour:
   - objectType: 2
     position: {x: 0.6, y: -0.25, z: 110}
   - objectType: 2
-    position: {x: 0, y: 0.15, z: 105}
+    position: {x: 0, y: -0.25, z: 105}
   - objectType: 4
     position: {x: -1, y: 0.15, z: 105}
   - objectType: 4
