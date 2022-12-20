@@ -8,9 +8,12 @@ public class Shootable : MonoBehaviour
     private TextMeshPro textChild;
     protected int shootableHealth;
 
+    private Animator stoneAnimator;
+
     private void Awake()
     {
         textChild = GetComponentInChildren<TextMeshPro>();
+        stoneAnimator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -26,8 +29,16 @@ public class Shootable : MonoBehaviour
         SetHealth(randomHealth);
     }
 
+    private void ScaleObject()
+    {
+        if (stoneAnimator != null)
+            stoneAnimator.SetTrigger("isScale");
+    }
+
     public virtual void GetShot()
     {
+        ScaleObject();
+
         Vector3 particlePosition = transform.position - (Vector3.forward / 2f);
         Instantiate(stoneParticle, particlePosition, Quaternion.identity);
 
