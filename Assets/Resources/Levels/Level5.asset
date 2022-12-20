@@ -90,3 +90,9 @@ MonoBehaviour:
     position: {x: -1, y: 0.15, z: 110}
   - objectType: 5
     position: {x: 1, y: 0.15, z: 110}
+  - objectType: 2
+    position: {x: 0.1, y: -0.25, z: 10}
+  - objectType: 2
+    position: {x: 0.5, y: -0.25, z: 10}
+  - objectType: 2
+    position: {x: 0.9, y: -0.25, z: 10}
