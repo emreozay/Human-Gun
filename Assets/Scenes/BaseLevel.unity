@@ -2765,7 +2765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 1
-  changeTheLevel: 1
+  changeTheLevel: 0
   finalRoadPrefab: {fileID: 3110513164472628489, guid: b32ed838b3230554589c087b3b1fdfeb, type: 3}
   player: {fileID: 2026252603}
   objectsWithPrefab:

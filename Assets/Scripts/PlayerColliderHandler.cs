@@ -39,83 +39,90 @@ public class PlayerColliderHandler : MonoBehaviour
     private void Start()
     {
         money = PlayerPrefs.GetInt("Money", 0);
-        UpdateMoney();
+        moneyText.text = "$" + money;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Lens"))
-        {
-            var textChild = other.GetComponentInChildren<TextMeshPro>();
-            var mesh = other.GetComponentInChildren<MeshRenderer>();
-
-            if (textChild != null)
-            {
-                float sign = Mathf.Sign(int.Parse(textChild.text));
-                int stickmanNumber = Mathf.Abs(int.Parse(textChild.text));
-
-                if (sign > 0f)
-                {
-                    StartCoroutine(WaitForNewStickman(stickmanNumber));
-                }
-                else if (sign < 0f)
-                {
-                    for (int i = 0; i < stickmanNumber; i++)
-                    {
-                        DestroyStickman();
-                    }
-                }
-            }
-
-            if (mesh != null)
-                mesh.material.color = Color.gray;
-        }
+            TriggerWithLens(other);
 
         if (other.CompareTag("Money"))
-        {
-            if (moneyText != null)
-            {
-                UpdateMoney();
-            }
-
-            Destroy(other.gameObject);
-
-            Vector3 moneyParticlePosition = transform.position + Vector3.forward / 3f;
-            Instantiate(moneyParticle, moneyParticlePosition, Quaternion.identity);
-        }
+            TriggerWithMoney(other);
 
         if (other.CompareTag("Obstacle"))
+            TriggerWithObstacle(other);
+
+        if (other.CompareTag("Human"))
+            AddNewStickman(other);
+    }
+
+    private void TriggerWithLens(Collider other)
+    {
+        var textChild = other.GetComponentInChildren<TextMeshPro>();
+        var mesh = other.GetComponentInChildren<MeshRenderer>();
+
+        if (textChild != null)
         {
-            DestroyStickman();
+            float sign = Mathf.Sign(int.Parse(textChild.text));
+            int stickmanNumber = Mathf.Abs(int.Parse(textChild.text));
 
-            if (isFinished)
+            if (sign > 0f)
             {
-                PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level", 1) + 1);
-
-                Time.timeScale = 0;
-                LevelGenerator.LevelCompleted();
-
-                return;
+                StartCoroutine(WaitForNewStickman(stickmanNumber));
             }
-
-            if (health > 0)
+            else if (sign < 0f)
             {
-                if (other.GetComponent<Shootable>() != null)
-                    Destroy(other.gameObject);
-                else
-                    GetComponent<Rigidbody>().AddForce(Vector3.up * 2f, ForceMode.Impulse);
-            }
-            else
-            {
-                Time.timeScale = 0;
-
-                LevelGenerator.LevelFailed();
+                for (int i = 0; i < stickmanNumber; i++)
+                {
+                    DestroyStickman();
+                }
             }
         }
 
-        if (other.CompareTag("Human"))
+        if (mesh != null)
+            mesh.material.color = Color.gray;
+    }
+
+    private void TriggerWithMoney(Collider other)
+    {
+        if (moneyText != null)
         {
-            AddNewStickman(other);
+            UpdateMoney();
+        }
+
+        Destroy(other.gameObject);
+
+        Vector3 moneyParticlePosition = transform.position + Vector3.forward / 3f;
+        Instantiate(moneyParticle, moneyParticlePosition, Quaternion.identity);
+    }
+
+    private void TriggerWithObstacle(Collider other)
+    {
+        DestroyStickman();
+
+        if (isFinished)
+        {
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level", 1) + 1);
+
+            Time.timeScale = 0;
+            LevelGenerator.LevelCompleted();
+
+            return;
+        }
+
+        if (health > 0)
+        {
+            if (other.GetComponent<Shootable>() != null)
+                Destroy(other.gameObject);
+            else
+                GetComponent<Rigidbody>().AddForce(Vector3.up * 2f, ForceMode.Impulse);
+        }
+        else
+        {
+            Time.timeScale = 0;
+
+            LevelGenerator.LevelFailed();
         }
     }
 
@@ -222,7 +229,6 @@ public class PlayerColliderHandler : MonoBehaviour
         if (collision.collider.CompareTag("Finish"))
         {
             isFinished = true;
-            print("FINISHED!!!");
         }
     }
 

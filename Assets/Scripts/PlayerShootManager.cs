@@ -34,6 +34,11 @@ public class PlayerShootManager : MonoBehaviour
 
     private void Update()
     {
+        CheckForShoot();
+    }
+
+    private void CheckForShoot()
+    {
         Debug.DrawRay(transform.position, Vector3.forward * bulletRange, Color.cyan);
 
         if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit raycast, bulletRange))

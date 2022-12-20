@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 045b0000
-      m_LastClickedID: 23300
-      m_ExpandedIDs: 524df0ff0095f0ff0695f0ff1895f0ff6a95f0ff109bf0ff4ed2f0ff8cd2f0ff92d2f0ffa4d2f0ff9cd8f0ffaaa7f5ffa250f6ffcee5f6ffdce5f6ff8aeaf6ff2002f7ff6621f7ffae03faff6045faff864dfaff8c4dfaff9e4dfaff6053faff6278fbff7478fbff367efbffc496fbffd696fbff989cfbff1edbfbff2e0ffdff0a10fdffac2afdff882bfdffe278fdff0e5cffff3c91ffff32fbffff4e5a0000
+      m_SelectedIDs: 52ed0200
+      m_LastClickedID: 191826
+      m_ExpandedIDs: e843edff1086eeff524df0ff0095f0ff0695f0ff1895f0ff6a95f0ff109bf0ff4ed2f0ff8cd2f0ff92d2f0ffa4d2f0ff9cd8f0ffaaa7f5ffa250f6ffcee5f6ffdce5f6ff8aeaf6ff2002f7ff6621f7ffae03faff6045faff864dfaff8c4dfaff9e4dfaff6053faff6278fbff7478fbff367efbffc496fbffd696fbff989cfbff1edbfbff2e0ffdff0a10fdffac2afdff882bfdffe278fdff0e5cffff3c91ffff32fbffff4e5a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -503,9 +503,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.6947359, y: 3.3561964, z: 115.24614}
+    m_Target: {x: 0.5635261, y: 1.3706912, z: 112.04365}
     speed: 2
-    m_Value: {x: -1.6947359, y: 3.3561964, z: 115.24614}
+    m_Value: {x: 0.5635261, y: 1.3706912, z: 112.04365}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -552,13 +552,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.25690162, y: 0.0009782306, z: -0.00029183342, w: 0.9664599}
+    m_Target: {x: 0.012612391, y: 0.98619413, z: -0.13878591, w: 0.08977254}
     speed: 2
-    m_Value: {x: 0.25834534, y: 0.0009777702, z: -0.0002932941, w: 0.9660522}
+    m_Value: {x: 0.0126120215, y: 0.9861652, z: -0.13878185, w: 0.08976991}
   m_Size:
-    m_Target: 0.38586375
+    m_Target: 0.8070937
     speed: 2
-    m_Value: 473.70383
+    m_Value: 0.8070937
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -751,8 +751,8 @@ MonoBehaviour:
     y: 0
     width: 279
     height: 641
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -827,22 +827,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity Projects\EmreOzay-HumanGun
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 246e0000
-    m_LastClickedID: 28196
-    m_ExpandedIDs: 00000000f86d0000fa6d0000fc6d0000fe6d0000006e0000026e0000266e000000ca9a3b
+    m_SelectedIDs: f86d0000
+    m_LastClickedID: 28152
+    m_ExpandedIDs: 00000000f86d0000fa6d0000fc6d0000fe6d0000006e0000026e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -895,8 +895,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 045b0000
-    m_LastClickedInstanceID: 23300
+    m_SelectedInstanceIDs: 52ed0200
+    m_LastClickedInstanceID: 191826
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000c85a0000000000006c830000566d0000926d000016780000
     m_RenameOverlay:
@@ -922,7 +922,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 66}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 114
@@ -984,7 +984,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 23100
+  m_LastSelectedObjectID: 23228
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52

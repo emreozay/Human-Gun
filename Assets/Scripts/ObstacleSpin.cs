@@ -3,7 +3,7 @@ using UnityEngine;
 public class ObstacleSpin : MonoBehaviour
 {
     [SerializeField]
-    private float spinSpeed = 15f;
+    private float spinSpeed = 20f;
 
     void Update()
     {
