@@ -55,6 +55,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7214621227043157148}
     m_Modifications:
+    - target: {fileID: 347628114059058818, guid: daafaefd31aca09478f47a432fe29d9f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 895f76d3e6a7c2d41a11b84874e902fa, type: 2}
     - target: {fileID: 3525570002448337356, guid: daafaefd31aca09478f47a432fe29d9f, type: 3}
       propertyPath: m_Name
       value: Stone_Money (2)
@@ -129,6 +133,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7214621227043157148}
     m_Modifications:
+    - target: {fileID: 347628114059058818, guid: daafaefd31aca09478f47a432fe29d9f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 895f76d3e6a7c2d41a11b84874e902fa, type: 2}
     - target: {fileID: 3525570002448337356, guid: daafaefd31aca09478f47a432fe29d9f, type: 3}
       propertyPath: m_Name
       value: Stone_Money
@@ -203,6 +211,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7214621227043157148}
     m_Modifications:
+    - target: {fileID: 347628114059058818, guid: daafaefd31aca09478f47a432fe29d9f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 895f76d3e6a7c2d41a11b84874e902fa, type: 2}
     - target: {fileID: 3525570002448337356, guid: daafaefd31aca09478f47a432fe29d9f, type: 3}
       propertyPath: m_Name
       value: Stone_Money (1)

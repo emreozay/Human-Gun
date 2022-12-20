@@ -65,8 +65,7 @@ public class PlayerColliderHandler : MonoBehaviour
         {
             if (moneyText != null)
             {
-                money++;
-                moneyText.text = "$" + money;
+                UpdateMoney();
             }
 
             Destroy(other.gameObject);
@@ -111,7 +110,7 @@ public class PlayerColliderHandler : MonoBehaviour
     {
         Animator humanAnimator = humanCollider.GetComponent<Animator>();
 
-        if (playerAnimator != null)
+        if (playerAnimator != null && animIndex == 1)
             playerAnimator.SetTrigger("Pose_01");
 
         humanCollider.enabled = false;
@@ -124,7 +123,12 @@ public class PlayerColliderHandler : MonoBehaviour
             animIndex++;
 
             if (animIndex > 6)
+            {
+                Destroy(humanCollider.gameObject);
+                UpdateMoney();
+
                 return;
+            }
 
             health++;
 
@@ -196,6 +200,12 @@ public class PlayerColliderHandler : MonoBehaviour
             isFinished = true;
             print("FINISHED!!!");
         }
+    }
+
+    private void UpdateMoney()
+    {
+        money++;
+        moneyText.text = "$" + money;
     }
 
     public int GetHealth()

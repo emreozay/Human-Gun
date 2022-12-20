@@ -3645,7 +3645,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 437582845250212936, guid: 5dbfb38903f2d5b469253687699aa83a, type: 3}
   bulletParent: {fileID: 1316355652}
-  recoilParent: {fileID: 2036427609}
   recoilAnimator: {fileID: 2036427610}
   bulletForce: 25
 --- !u!1 &2036427608
