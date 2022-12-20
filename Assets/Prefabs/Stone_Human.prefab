@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1674859041392357497}
   - component: {fileID: 6381806300387912411}
   - component: {fileID: 6413815125659512859}
-  - component: {fileID: 9184338261077811842}
+  - component: {fileID: 1135394069263774394}
   m_Layer: 0
   m_Name: Stone_Human
   m_TagString: Obstacle
@@ -121,7 +121,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9184338261077811842
+--- !u!114 &1135394069263774394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 882343910408802732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f81ce272f28032642b40ad6abca274d3, type: 3}
+  m_Script: {fileID: 11500000, guid: be411a1fe11f416429889691dfb3e753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stoneParticle: {fileID: 3492932080966948572, guid: 29ab5fe667a31c641ae146a8d557ea30, type: 3}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 322424620024987211}
   - component: {fileID: 5464989589621793338}
   - component: {fileID: 6014686724099360718}
-  - component: {fileID: 2697644118585718788}
+  - component: {fileID: 4027296800650511231}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Obstacle
@@ -120,7 +120,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2697644118585718788
+--- !u!114 &4027296800650511231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2267992372862410654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48691ba315e81ba47bf98eef99314694, type: 3}
+  m_Script: {fileID: 11500000, guid: 63e45dc5c8952e345b97d4ab604cfc80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stoneParticle: {fileID: 3492932080966948572, guid: 29ab5fe667a31c641ae146a8d557ea30, type: 3}

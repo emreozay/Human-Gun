@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3165374459709974553}
   - component: {fileID: 7224718441316954811}
   - component: {fileID: 347628114059058818}
-  - component: {fileID: 3685666712860848899}
+  - component: {fileID: 3101460559253989466}
   m_Layer: 0
   m_Name: Stone_Money
   m_TagString: Obstacle
@@ -121,7 +121,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3685666712860848899
+--- !u!114 &3101460559253989466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3525570002448337356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666535c9f2a114d4d88ffcbf534d0dcd, type: 3}
+  m_Script: {fileID: 11500000, guid: be411a1fe11f416429889691dfb3e753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stoneParticle: {fileID: 3492932080966948572, guid: 29ab5fe667a31c641ae146a8d557ea30, type: 3}

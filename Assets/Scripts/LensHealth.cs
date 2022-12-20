@@ -22,7 +22,7 @@ public class LensHealth : MonoBehaviour
     private void SetLensHealth()
     {
         int currentLevel = PlayerPrefs.GetInt("Level", 1);
-        int randomHealth = Random.Range(-currentLevel * 2, currentLevel * 2 + 1);
+        int randomHealth = Random.Range(-2, currentLevel * 2);
 
         if (randomHealth < 0)
         {
