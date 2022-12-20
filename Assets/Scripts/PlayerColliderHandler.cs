@@ -17,6 +17,9 @@ public class PlayerColliderHandler : MonoBehaviour
     private Animator playerAnimator;
 
     [SerializeField]
+    private GameObject moneyParticle;
+
+    [SerializeField]
     private Material[] stickmanMaterials;
 
     private Stack<GameObject> stickmanStack = new Stack<GameObject>();
@@ -69,6 +72,9 @@ public class PlayerColliderHandler : MonoBehaviour
             }
 
             Destroy(other.gameObject);
+
+            Vector3 moneyParticlePosition = transform.position + Vector3.forward / 3f;
+            Instantiate(moneyParticle, moneyParticlePosition, Quaternion.identity);
         }
 
         if (other.CompareTag("Obstacle"))

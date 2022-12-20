@@ -3627,6 +3627,7 @@ MonoBehaviour:
   stickman: {fileID: 5737715491772845444, guid: 3b5d6e71053e56f499bd5cbe6b0f1476, type: 3}
   recoilParent: {fileID: 2036427609}
   playerAnimator: {fileID: 2043778674}
+  moneyParticle: {fileID: 6031693469928426549, guid: 51b8e5f63b4bd7741884368ce642c1a1, type: 3}
   stickmanMaterials:
   - {fileID: 2100000, guid: b494c07fb008f0f4c9d7ce6e08c1e333, type: 2}
   - {fileID: 2100000, guid: 16bf1d40dfcfa9e44af7078e808e17f0, type: 2}
